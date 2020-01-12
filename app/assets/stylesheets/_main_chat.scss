@@ -1,0 +1,39 @@
+.chat
+  .chat__title
+    .chats
+      .chats__name
+        テスト
+      .chats__member
+        Member：masa
+    .chat__title__edit-button
+      Edit
+  .chat__content
+    .chat__content__messages
+      .chat__content__messages__user
+        masa
+      .chat__content__messages__date
+        2019/12/22(Sun) 14:57:00
+    .chat__content__text
+      おはよう！
+    .chat__content__messages
+      .chat__content__messages__user
+        masa
+      .chat__content__messages__date
+        2019/12/22(Sun) 14:57:00
+    .chat__content__text
+      おはよう！
+    .chat__content__messages
+      .chat__content__messages__user
+        masa
+      .chat__content__messages__date
+        2019/12/22(Sun) 14:57:00
+    .chat__content__text
+      おはよう！
+  .form
+    %form
+      %input.form__message{placeholder: ' type a message'}
+      .form__mask
+        %label.form__mask__image
+          = icon('fa','image',class: 'icon')
+          %input.hidden{type: 'file'}
+      %input.form__submit{type: 'submit', value: 'Send'}

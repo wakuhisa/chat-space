@@ -1,0 +1,28 @@
+.side-bar
+  .side-bar__name
+    .header
+      %h3.header__name
+        masa
+      %ul.header__icon
+        %li.list
+          = link_to '#' do
+            = icon('fa', 'edit', class: 'icon')
+        %li.list
+          = link_to '#' do
+            = icon('fa', 'cog', class: 'icon')
+  .side-bar__group
+    .group
+      .group__name
+        グループ名
+      .group__message
+        まだメッセージがありません
+    .group
+      .group__name
+        グループ名
+      .group__message
+        まだメッセージがありません
+    .group
+      .group__name
+        グループ名
+      .group__message
+        まだメッセージがありません
