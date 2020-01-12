@@ -1,28 +1,51 @@
-.side-bar
-  .side-bar__name
-    .header
-      %h3.header__name
-        masa
-      %ul.header__icon
-        %li.list
-          = link_to '#' do
-            = icon('fa', 'edit', class: 'icon')
-        %li.list
-          = link_to '#' do
-            = icon('fa', 'cog', class: 'icon')
-  .side-bar__group
-    .group
-      .group__name
-        グループ名
-      .group__message
-        まだメッセージがありません
-    .group
-      .group__name
-        グループ名
-      .group__message
-        まだメッセージがありません
-    .group
-      .group__name
-        グループ名
-      .group__message
-        まだメッセージがありません
+.side-bar {
+  height: 100%;
+  width: 300px;
+  background-color: #253141;
+  &__name {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    .header {
+      width: 260px;
+      margin: 0 20px;
+      &__name {
+        color: $white;
+        font-size: 16px;
+        font-weight: bold;
+        float: left;
+      }
+      &__icon {
+        width: 60px;
+        display: flex;
+        float: right;
+        .list {
+          justify-content: space-between;
+          margin-left: 5px;
+        }
+        .icon {
+          color: $white;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  &__group {
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    color: $white;
+    .group {
+      width: 260px;
+      margin: 0 20px;
+      padding: 20px 0 40px 0;
+      &__name {
+        font-size: 15px;
+        margin: 0 0 5px 0;
+      }
+      &__message {
+        font-size: 11px;
+      }
+    }
+  }
+}
