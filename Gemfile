@@ -58,3 +58,5 @@ gem 'erb2haml'
 
 #2019.12.17に導入！
 gem 'font-awesome-sass'
+
+gem 'devise'
