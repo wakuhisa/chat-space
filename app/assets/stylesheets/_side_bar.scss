@@ -34,7 +34,6 @@
   &__group {
     height: calc(100vh - 100px);
     background-color: #2f3e51;
-    color: $white;
     .group {
       width: 260px;
       margin: 0 20px;
@@ -42,9 +41,11 @@
       &__name {
         font-size: 15px;
         margin: 0 0 5px 0;
+        color: $white;
       }
       &__message {
         font-size: 11px;
+        color: $white;
       }
     }
   }
