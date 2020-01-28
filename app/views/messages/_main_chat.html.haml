@@ -2,38 +2,23 @@
   .chat__title
     .chats
       .chats__name
-        テスト
+        = @group.name
       .chats__member
-        Member：masa
+        - if @users
+          .chats__member
+            Member : 
+            - @users.each do |user|
+              = user.name
     .chat__title__edit-button
-      Edit
-  .chat__content
-    .chat__content__messages
-      .chat__content__messages__user
-        masa
-      .chat__content__messages__date
-        2019/12/22(Sun) 14:57:00
-    .chat__content__text
-      おはよう！
-    .chat__content__messages
-      .chat__content__messages__user
-        masa
-      .chat__content__messages__date
-        2019/12/22(Sun) 14:57:00
-    .chat__content__text
-      おはよう！
-    .chat__content__messages
-      .chat__content__messages__user
-        masa
-      .chat__content__messages__date
-        2019/12/22(Sun) 14:57:00
-    .chat__content__text
-      おはよう！
+      = link_to edit_group_path(current_user) do
+        Edit
+  .messages
+    = render @messages
   .form
-    %form
-      %input.form__message{placeholder: ' type a message'}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: ' type a message'
       .form__mask
-        %label.form__mask__image
-          = icon('fa','image',class: 'icon')
-          %input.hidden{type: 'file'}
-      %input.form__submit{type: 'submit', value: 'Send'}
+        = f.label :image, class: 'form__mask__image' do
+          = icon('fa','image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
