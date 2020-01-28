@@ -2,11 +2,16 @@
   .chat__title
     .chats
       .chats__name
-        テスト
+        = @group.name
       .chats__member
-        Member：masa
+        - if @users
+          .chats__member
+            Member : 
+            - @users.each do |user|
+              = user.name
     .chat__title__edit-button
-      Edit
+      = link_to edit_group_path(current_user) do
+        Edit
   .messages
     = render @messages
   .form

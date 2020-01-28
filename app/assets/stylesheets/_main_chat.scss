@@ -1,6 +1,7 @@
 .chat {
   width: calc(100% - 300px);
   background-color: $white;
+  position: relative;
   &__title {
     height: 100px;
     border-bottom: solid 1px #eeeeee;
@@ -19,7 +20,6 @@
       }
     }
     &__edit-button {
-      color: $light_blue;
       width: 72px;
       height: 40px;
       line-height: 40px;
@@ -28,6 +28,10 @@
       float: right;
       border: solid 1px $light_blue;
       box-sizing: border-box;
+      a {
+        color: $light_blue;
+        text-decoration: none;
+      }
     }
   }
 
@@ -64,9 +68,12 @@
 
   .form {
     height: 90px;
+    width: 100%;
     padding: 20px 50px 20px 40px;
     background-color: #DDDDDD;
     box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
     &__message {
       width: calc(100% - 150px);
       height: 50px;
