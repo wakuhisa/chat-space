@@ -7,7 +7,7 @@
         - if @users
           .chats__member
             Member : 
-            - @users.each do |user|
+            - @group.users.each do |user|
               = user.name
     .chat__title__edit-button
       = link_to edit_group_path(current_user) do

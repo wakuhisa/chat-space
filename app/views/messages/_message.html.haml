@@ -1,10 +1,10 @@
-.chat__content
-  .chat__content__messages
-    .chat__content__messages__user
+.messages__content
+  .messages__content__messages
+    .messages__content__messages__user
       = message.user.name
-    .chat__content__messages__date
+    .messages__content__messages__date
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-  .chat__content__text
+  .messages__content__text
     - if message.content.present?
       %p.lower-message__content
         = message.content
