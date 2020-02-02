@@ -5,10 +5,9 @@
         = @group.name
       .chats__member
         - if @users
-          .chats__member
-            Member : 
-            - @group.users.each do |user|
-              = user.name
+          Member : 
+          - @group.users.each do |user|
+            = user.name
     .chat__title__edit-button
       = link_to edit_group_path(current_user) do
         Edit
