@@ -96,7 +96,7 @@ $('#new_message').on('submit', function(e) {
       }
     })
     .fail(function() {
-      alert("error");
+      alert("メッセージ自動更新に失敗しました");
     });
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
