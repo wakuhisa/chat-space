@@ -34,34 +34,33 @@
       }
     }
   }
-
+  
   .messages {
-    height: calc(100% - 100px - 90px);
+    height: calc(100vh - 100px - 90px);
+    padding: 46px 40px;
     background-color: #fafafa;
-    &__post {
-      margin-left: 40px;
-      padding-top: 46px;
-      display: flex;
-      &__user {
-        color: $dark_gray;
-        font-size: 16px;
-        font-weight: bold;
-        padding-bottom: 12px;
+    overflow: scroll;
+    .message {
+      padding-bottom: 46px;
+      &__content {
+        display: flex;
+        &__user {
+          color: $dark_gray;
+          font-size: 16px;
+          font-weight: bold;
+          margin-bottom: 10px;
+        }
+        &__date {
+          color: $light_gray;
+          font-size: 12px;
+          margin-left: 10px;
+        }
       }
-      &__date {
-        color: $light_gray;
-        font-size: 12px;
-        padding-left: 10px;
-      }
-    }
-    &__content {
-      color: #434A54;
-      font-size: 14px;
-      margin-left: 40px;
-      &__lower-message {
-        color: #434A54;
-        font-size: 14px;
-        margin-left: 40px;
+      &__post {
+        .lower-message {
+          color: #434A54;
+          font-size: 14px;
+        }
       }
     }
   }
