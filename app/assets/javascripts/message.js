@@ -7,7 +7,7 @@ $(function() {
             <div class="message__content__user">
               ${message.user_name}
             </div>
-            <div class="message__content__data">
+            <div class="message__content__date">
               ${message.created_at}
             </div>
           </div>
@@ -80,21 +80,26 @@ $('#new_message').on('submit', function(e) {
   var reloadMessages = function() {
     last_message_id = $('.message:last').data("message-id");
     $.ajax({
-      url: "api/messages/index/@messages",
+      url: "api/messages",
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      var insertHTML = '';
-      $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
-      });
-      $('.messages').append(insertHTML);
+      if (messages.length !== 0) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.messages').append(insertHTML);
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight });
+      }
     })
     .fail(function() {
       console.log('error');
     });
   };
-  setInterval(reloadMessages, 7000);
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });
