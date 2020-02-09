@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'wakuhisa'
-  config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/wakuhisa'
+  config.asset_host = 'https://wakuhisa.s3.amazonaws.com'
 end
